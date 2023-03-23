@@ -1,0 +1,191 @@
+<html>
+<head>
+<title>Hiragana Test</title>
+<script type="text/javascript">
+var rNum, rChar
+var icorr, iwrong
+var charArray = new Array()
+charArray[1] = "a"
+charArray[2] = "i"
+charArray[3] = "u"
+charArray[4] = "e"
+charArray[5] = "o"
+charArray[6] = "ka"
+charArray[7] = "ki"
+charArray[8] = "ku"
+charArray[9] = "ke"
+charArray[10] = "ko"
+charArray[11] = "sa"
+charArray[12] = "shi"
+charArray[13] = "su"
+charArray[14] = "se"
+charArray[15] = "so"
+charArray[16] = "ta"
+charArray[17] = "chi"
+charArray[18] = "tsu"
+charArray[19] = "te"
+charArray[20] = "to"
+charArray[21] = "na"
+charArray[22] = "ni"
+charArray[23] = "nu"
+charArray[24] = "ne"
+charArray[25] = "no"
+charArray[26] = "ha"
+charArray[27] = "hi"
+charArray[28] = "fu"
+charArray[29] = "he"
+charArray[30] = "ho"
+charArray[31] = "ma"
+charArray[32] = "mi"
+charArray[33] = "mu"
+charArray[34] = "me"
+charArray[35] = "mo"
+charArray[36] = "ya"
+charArray[37] = "yu"
+charArray[38] = "yo"
+charArray[39] = "ra"
+charArray[40] = "ri"
+charArray[41] = "ru"
+charArray[42] = "re"
+charArray[43] = "ro"
+charArray[44] = "wa"
+charArray[45] = "w(o)"
+charArray[46] = "n"
+ 
+/* display all hiragana 
+for (i=1; i<=46; i++)
+{ 
+  document.write(i + " " + charArray[i] + "<br>") 
+} */
+
+icorr = 0
+iwrong = 0
+
+function set_question()
+{
+  rNum = Math.round((Math.random()*45)+1) 
+  rChar = charArray[rNum] 
+  document.getElementById("question").innerHTML = rChar 
+}  
+
+function display_score()
+{  
+  document.getElementById("right").innerHTML = icorr 
+  document.getElementById("wrong").innerHTML = iwrong 
+}  
+
+function check(x) 
+{  
+  
+  if (document.getElementById(charArray[rNum]).style.background = "red")
+  { 
+    document.getElementById(charArray[rNum]).style.background = "#faffd2" 
+  } 
+
+/* hier war parseInt(x) drin!! */
+
+  if (x == charArray[rNum])
+  { 
+    icorr++ 
+    display_score() 
+    set_question() 
+  }  
+  else 
+  {  
+    document.getElementById(charArray[rNum]).style.background = "red" 
+    iwrong++ 
+    display_score() 
+    icorr-- 
+  }
+
+} 
+
+</script> 
+
+<style text="text/css"> 
+#question {font-size:16pt; font-family: Helvetica; color:red; text-align:center} 
+#score {font-size:12pt; font-weight:bold; font-family:Verdana, Helvetica; color:red} 
+td {width:45pt; font-size:16pt; font-family:Verdana, Helvetica; color:blue; text-align:center; cursor:pointer; cursor:hand} 
+</style> 
+</head>  
+<body onload="set_question()"> 
+<h1>Hiragana Test (&#12402;&#12425;&#12364;&#12394;&nbsp;&#65411;&#65405;&#65412;)</h1>
+<a href="hira_roma.html">hiragana -> romanji</a>&nbsp;&middot;&nbsp;<a href="roma_hira.html">romanji -> hiragana</a>&nbsp;&middot;&nbsp;<a href="kata_roma.html">katakana -> romanji</a>&nbsp;&middot;&nbsp;<a href="roma_kata.html">romanji -> katakana</a><br>
+<div id="question">--</div><br>
+<div align="center">
+<table border>
+  <tr> 
+    <td id="a" onClick="check(this.id)">&#12354;</td>
+    <td id="i" onClick="check(this.id)">&#12356;</td>
+    <td id="u" onClick="check(this.id)">&#12358;</td>
+    <td id="e" onClick="check(this.id)">&#12360;</td>
+    <td id="o" onClick="check(this.id)">&#12362;</td>
+  </tr>
+  <tr>
+    <td id="ka" onClick="check(this.id)">&#12363;</td>
+    <td id="ki" onClick="check(this.id)">&#12365;</td>
+    <td id="ku" onClick="check(this.id)">&#12367;</td>
+    <td id="ke" onClick="check(this.id)">&#12369;</td>
+    <td id="ko" onClick="check(this.id)">&#12371;</td>
+  </tr>
+  <tr>
+    <td id="sa" onClick="check(this.id)">&#12373;</td>
+    <td id="shi" onClick="check(this.id)">&#12375;</td>
+    <td id="su" onClick="check(this.id)">&#12377;</td>
+    <td id="se" onClick="check(this.id)">&#12379;</td>
+    <td id="so" onClick="check(this.id)">&#12381;</td>
+  </tr>
+  <tr>
+    <td id="ta" onClick="check(this.id)">&#12383;</td>
+    <td id="chi" onClick="check(this.id)">&#12385;</td>
+    <td id="tsu" onClick="check(this.id)">&#12388;</td>
+    <td id="te" onClick="check(this.id)">&#12390;</td>
+    <td id="to" onClick="check(this.id)">&#12392;</td>
+  </tr> 
+  <tr> 
+    <td id="na" onClick="check(this.id)">&#12394;</td>
+    <td id="ni" onClick="check(this.id)">&#12395;</td>
+    <td id="nu" onClick="check(this.id)">&#12396;</td>
+    <td id="ne" onClick="check(this.id)">&#12397;</td>
+    <td id="no" onClick="check(this.id)">&#12398;</td>
+  </tr>
+  <tr>
+    <td id="ha" onClick="check(this.id)">&#12399;</td>
+    <td id="hi" onClick="check(this.id)">&#12402;</td>
+    <td id="fu" onClick="check(this.id)">&#12405;</td>
+    <td id="he" onClick="check(this.id)">&#12408;</td>
+    <td id="ho" onClick="check(this.id)">&#12411;</td>
+  </tr>
+  <tr>
+    <td id="ma" onClick="check(this.id)">&#12414;</td>
+    <td id="mi" onClick="check(this.id)">&#12415;</td>
+    <td id="mu" onClick="check(this.id)">&#12416;</td>
+    <td id="me" onClick="check(this.id)">&#12417;</td>
+    <td id="mo" onClick="check(this.id)">&#12418;</td>
+  </tr>
+  <tr>
+    <td id="ya" onClick="check(this.id)">&#12420;</td>
+    <td onClick="check(this.id)">&nbsp;</td>
+    <td id="yu" onClick="check(this.id)">&#12422;</td>
+    <td onClick="check(this.id)">&nbsp;</td>
+    <td id="yo" onClick="check(this.id)">&#12424;</td>
+  </tr>
+  <tr> 
+    <td id="ra" onClick="check(this.id)">&#12425;</td>
+    <td id="ri" onClick="check(this.id)">&#12426;</td>
+    <td id="ru" onClick="check(this.id)">&#12427;</td>
+    <td id="re" onClick="check(this.id)">&#12428;</td>
+    <td id="ro" onClick="check(this.id)">&#12429;</td>
+  </tr>
+  <tr>
+    <td id="wa" onClick="check(this.id)">&#12431;</td>
+    <td id="w(o)" onClick="check(this.id)">&#12434;</td>
+    <td id="n" onClick="check(this.id)">&#12435;</td>
+    <td onClick="check(this.id)">&nbsp;</td>
+    <td><button onclick="location.reload()">Reset</button></td>
+  </tr>
+</table>
+</div>
+<p id="score">Score: correct = <span id="right">0</span>&nbsp;&nbsp;wrong = <span id="wrong">0</span></p>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<html>
+<head>
+<title>Katakana Test</title>
+<script type="text/javascript">
+var rNum, rChar
+var icorr, iwrong
+icorr = 0
+iwrong = 0
+
+function set_question()
+{
+  rNum = Math.round(Math.random()*43)+65393
+  rChar = "&#" + rNum + ";"
+  document.getElementById("question").innerHTML = rChar
+}
+
+function display_score()
+{
+  document.getElementById("right").innerHTML = icorr
+  document.getElementById("wrong").innerHTML = iwrong
+}
+
+function check(x)
+{
+  if (document.getElementById(rNum).style.background = "red")
+  {
+    document.getElementById(rNum).style.background = "#faffd2"
+  }
+  if (parseInt(x) == rNum)
+  {
+    icorr++
+    display_score()
+    set_question()
+  }
+  else
+  {
+    document.getElementById(rNum).style.background = "red"
+    iwrong++
+    display_score()
+    icorr--
+  }
+}
+</script>
+<style text="text/css">
+#question {font-size:16pt; font-family:Verdana, Helvetica; color:red; text-align:center}
+#score {font-size:12pt; font-weight:bold; font-family:Verdana, Helvetica; color:red}
+td {width:45pt; font-size:16pt; font-family:Verdana, Helvetica; color:blue; text-align:center; cursor:pointer; cursor:hand}
+</style>
+</head>
+<body onload="set_question()">
+<h1>Katakana Test (&#65398;&#65408;&#65398;&#65413;&nbsp;&#65411;&#65405;&#65412;)</h1>
+<a href="hira_roma.html">hiragana -> romanji</a>&nbsp;&middot;&nbsp;<a href="roma_hira.html">romanji -> hiragana</a>&nbsp;&middot;&nbsp;<a href="kata_roma.html">katakana -> romanji</a>&nbsp;&middot;&nbsp;<a href="roma_kata.html">romanji -> katakana</a><br>
+<div id="question"></div>
+<br>
+<div align="center">
+<table border>
+ <tr>
+  <td id="a" onClick="check(this.id)">&#65393;</td>
+  <td id="i" onClick="check(this.id)">&#65394;</td>
+  <td id="u" onClick="check(this.id)">&#65395;</td>
+  <td id="e" onClick="check(this.id)">&#65396;</td>
+  <td id="o" onClick="check(this.id)">&#65397;</td>
+ </tr>
+ <tr>
+  <td id="ka" onClick="check(this.id)">&#65398;</td>
+  <td id="ki" onClick="check(this.id)">&#65399;</td>
+  <td id="ku" onClick="check(this.id)">&#65400;</td>
+  <td id="ke" onClick="check(this.id)">&#65401;</td>
+  <td id="ko" onClick="check(this.id)">&#65402;</td>
+ </tr>
+ <tr>
+  <td id="sa" onClick="check(this.id)">&#65403;</td>
+  <td id="shi" onClick="check(this.id)">&#65404;</td>
+  <td id="su" onClick="check(this.id)">&#65405;</td>
+  <td id="se" onClick="check(this.id)">&#65406;</td>
+  <td id="so" onClick="check(this.id)">&#65407;</td>
+ </tr>
+ <tr>
+  <td id="ta" onClick="check(this.id)">&#65408;</td>
+  <td id="chi" onClick="check(this.id)">&#65409;</td>
+  <td id="tsu" onClick="check(this.id)">&#65410;</td>
+  <td id="te" onClick="check(this.id)">&#65411;</td>
+  <td id="to" onClick="check(this.id)">&#65412;</td>
+ </tr>
+ <tr>
+  <td id="na" onClick="check(this.id)">&#65413;</td>
+  <td id="ni" onClick="check(this.id)">&#65414;</td>
+  <td id="nu" onClick="check(this.id)">&#65415;</td>
+  <td id="ne" onClick="check(this.id)">&#65416;</td>
+  <td id="no" onClick="check(this.id)">&#65417;</td>
+ </tr>
+ <tr>
+  <td id="ha" onClick="check(this.id)">&#65418;</td>
+  <td id="hi" onClick="check(this.id)">&#65419;</td>
+  <td id="fu" onClick="check(this.id)">&#65420;</td>
+  <td id="he" onClick="check(this.id)">&#65421;</td>
+  <td id="ho" onClick="check(this.id)">&#65422;</td>
+ </tr>
+ <tr>
+  <td id="ma" onClick="check(this.id)">&#65423;</td>
+  <td id="mi" onClick="check(this.id)">&#65424;</td>
+  <td id="mu" onClick="check(this.id)">&#65425;</td>
+  <td id="me" onClick="check(this.id)">&#65426;</td>
+  <td id="mo" onClick="check(this.id)">&#65427;</td>
+ </tr>
+ <tr>
+  <td id="ya" onClick="check(this.id)">&#65428;</td>
+  <td onClick="check(this.id)">&nbsp;</td>
+  <td id="yu" onClick="check(this.id)">&#65429;</td>
+  <td onClick="check(this.id)">&nbsp;</td>
+  <td id="yo" onClick="check(this.id)">&#65430</td>
+ </tr>
+ <tr>
+  <td id="ra" onClick="check(this.id)">&#65431;</td>
+  <td id="ri" onClick="check(this.id)">&#65432;</td>
+  <td id="ru" onClick="check(this.id)">&#65433;</td>
+  <td id="re" onClick="check(this.id)">&#65434;</td>
+  <td id="ro" onClick="check(this.id)">&#65435;</td>
+ </tr>
+ <tr>
+  <td id="wa" onClick="check(this.id)">&#65436;</td>
+  <td id="n" onClick="check(this.id)">&#65437;</td>
+  <td onClick="check(this.id)">&nbsp;</td>
+  <td onClick="check(this.id)">&nbsp;</td>
+  <td><button onclick="location.reload()">Reset</button></td>
+ </tr>
+ <tr>
+</table>
+</div>
+<p id="score">Score: correct = <span id="right">0</span>&nbsp;&nbsp;wrong = <span id="wrong">0</span></p>
+</body>
+</html>
